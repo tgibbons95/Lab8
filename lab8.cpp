@@ -9,7 +9,7 @@ string morseChart[]=  {	".-","-...","-.-.","-..",".","..-.",
 						"--.","....","..",".---","-.-",".-..",
 						"--","-.","---",".--.","--.-",".-.",
 						"...","-","..-","...-",".--","-..-",
-						"-.--","--.."};
+						"-.--","--..","?"};
 //------------------------------------------------------------
 class message{
 	private:
@@ -93,6 +93,8 @@ void morseCodeMessage::translate(){
 		if (isupper(english[x]))
 			english[x]=tolower(english[x]);		//convert everything to lower case
 		index = english[x] - 'a';	//Use ascii character 'a' to center indexes from 0 to 25
+		if (index<0 || index>25)
+			index=26;
 		morse[x]=morseChart[index];		//find corresponding morse string for letter
 		x++;
 	}
