@@ -171,7 +171,7 @@ int main(int argc, char** argv){
 	}
 	
 	//free allocated pointer of array of objects
-	delete hold;
+	delete[] hold;
 	
 	//end successfully
 	return 1;
